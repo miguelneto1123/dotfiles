@@ -1,7 +1,8 @@
 #!/bin/bash
 
 cd "$(dirname "$0")"
-DOTFILES_ROOT="$(pwd -P)"
+REPO_ROOT="$(pwd -P)"
+DOTFILES_ROOT="$REPO_ROOT/dotfiles"
 
 info () {
   printf "\r  [ \033[00;34m..\033[0m ] $1\n"
@@ -22,7 +23,7 @@ fail () {
 }
 
 setup_gitconfig () {
-  if ! [ -f .gitconfig ]
+  if ! [ -f "$DOTFILES_ROOT/.gitconfig" ]
   then
     info 'setup gitconfig'
 
@@ -31,7 +32,7 @@ setup_gitconfig () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" templates/gitconfig.template > .gitconfig
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" "$REPO_ROOT/templates/gitconfig.template" > .gitconfig
 
     success 'gitconfig'
   else
@@ -115,7 +116,7 @@ link_file () {
 }
 
 install_dotfiles() {
-	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -type f -not -name '*.template'); do
+	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -type f); do
 		dst="$HOME/$(basename "${src}")"
 		link_file $src $dst
 	done
