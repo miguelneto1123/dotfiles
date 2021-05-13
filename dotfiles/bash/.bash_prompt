@@ -10,7 +10,7 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-prompt_git() {
+_prompt_git() {
 	local s='';
 	local branchName='';
 
@@ -109,7 +109,7 @@ if [ "$color_prompt" = yes ]; then
     PS1+="\[$white\]:" # in
     PS1+="\[$green\]\W" # current directory (only the dir name)
     # Git repository details
-    PS1+="\$(prompt_git \"\[${violet}\] \" \"\[${blue}\]\")"
+    PS1+="\$(_prompt_git \"\[${violet}\] \" \"\[${blue}\]\")"
     PS1+="\n\[$white\]" # newline
     PS1+='\$ ' # using '' to escape to # when root and $ when not
     PS1+="\[$reset\]" # reset colors for input
