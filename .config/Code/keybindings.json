@@ -1,0 +1,87 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key": "ctrl+shift+up",
+		"command": "-editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+down",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+alt+down",
+		"command": "-editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "shift+alt+up",
+		"command": "editor.action.copyLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+alt+up",
+		"command": "-editor.action.copyLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+up",
+		"command": "editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+up",
+		"command": "-editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+down",
+		"command": "editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditorInGroup"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditorInGroup"
+	},
+	{ "key": "ctrl+`", "command": "workbench.action.terminal.focus" },
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "extension.advancedNewFile"
+	},
+	{
+		"key": "ctrl+alt+n",
+		"command": "-extension.advancedNewFile"
+	},
+	{
+		"key": "shift+f2",
+		"command": "python.execInTerminal"
+	}
+]

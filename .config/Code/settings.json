@@ -1,0 +1,38 @@
+{
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.rulers": [
+    79
+  ],
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2,
+  "terminal.integrated.fontSize": 15,
+  "[python]": {},
+  "python.defaultInterpreterPath": "python3.7",
+  "python.languageServer": "Pylance",
+  //"emmet.includeLanguages": {
+  //  "javascript": "javascriptreact"
+  //},
+  "path-intellisense.absolutePathToWorkspace": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.useTabs": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "workbench.startupEditor": "none"
+  // "prettier.disableLanguages": [
+  //   "vue, ejs"
+  // ]
+}
