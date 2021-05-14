@@ -14,3 +14,8 @@ export HISTSIZE=32678
 export HISTFILESIZE=$HISTSIZE
 # Omit duplicates or lines starting with space in the history.
 export HISTCONTROL=ignoreboth
+
+# pyenv exports
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
