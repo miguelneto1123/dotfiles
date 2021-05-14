@@ -28,7 +28,7 @@ case $reply in
 		source ~/.bashrc
 		nvm install node
 		nvm install-latest-npm
-		success "NVM, node.js and npm were insalled" ;;
+		success "NVM, node.js and npm were installed" ;;
 	* )
 		fail "Skipped NVM installation" ;;
 esac
