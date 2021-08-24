@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# This script installs the programs and copies the dotfiles
+
+cd "$(dirname "$0")"
+REPO_ROOT="$(pwd -P)"
+
+# Getting logging functions
+source ./logger.sh
+
+echo "My bash dotfiles!"
+
+info "Attempting to install the dotfiles"
+bash ./install-dotfiles.sh $1
+success "dotfiles script finished"
+
+info "Attempting to install the programs"
+bash ./install-programs $1
+success "Program installation script finished"
+
+echo "Everything set!"
