@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # colorized ls and grep by default
 if [ -x /usr/bin/dircolors ]; then

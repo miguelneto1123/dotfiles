@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # NVM root directory
 export NVM_DIR="$HOME/.nvm"

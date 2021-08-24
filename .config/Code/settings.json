@@ -9,8 +9,9 @@
   "editor.insertSpaces": false,
   "editor.tabSize": 2,
   "terminal.integrated.fontSize": 15,
-  "[python]": {},
-  "python.defaultInterpreterPath": "python3.7",
+  "[python]": {
+    "editor.tabSize": 4
+  },
   "python.languageServer": "Pylance",
   //"emmet.includeLanguages": {
   //  "javascript": "javascriptreact"
@@ -19,16 +20,12 @@
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "prettier.useTabs": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.quickSuggestions": false,
-    "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
   "workbench.startupEditor": "none"
