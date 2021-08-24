@@ -11,4 +11,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Go binaries
-PATH=/usr/local/go/bin:/home/miguel/go/bin:$PATH
+PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"

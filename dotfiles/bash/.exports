@@ -4,7 +4,7 @@
 export NVM_DIR="$HOME/.nvm"
 
 # Go workspace
-export GOPATH="/home/miguel/go"
+export GOPATH="$HOME/go"
 
 # Make vim the default editor
 export EDITOR="vim"
