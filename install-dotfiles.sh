@@ -107,5 +107,7 @@ install_dotfiles() {
 	done
 }
 
+([ "$1" = "-y" ] || [ "$1" = "-f" ] || [ "$1" = "--force" ]) && overwrite_all="true"
+
 setup_gitconfig
 install_dotfiles
