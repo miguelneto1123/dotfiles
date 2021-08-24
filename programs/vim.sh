@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cd "$(dirname "$0")/.."
 REPO_ROOT="$(pwd -P)"
@@ -24,7 +24,7 @@ reply=
 case $reply in
 	[Yy] )
 		info "Installing Vim..."
-		sudo apt install -y libx11-dev libxtst-dev libxt-dev libsm-dev libxpm-dev
+		sudo apt-get install -y libx11-dev libxtst-dev libxt-dev libsm-dev libxpm-dev
 		cd $HOME
 		git clone https://github.com/vim/vim.git
 		cd vim/src
