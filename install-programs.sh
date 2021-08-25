@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 # This script installs the apt packages and handles program installations
 # inside the programs directory
