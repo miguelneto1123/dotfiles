@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd "$(dirname "$0")/.."
-pwd
 REPO_ROOT="$(pwd -P)"
 
 # Get logging functions

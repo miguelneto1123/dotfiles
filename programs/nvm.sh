@@ -25,7 +25,7 @@ case $reply in
 		# Remove any changes made to ~/.bashrc
 		git checkout -q "$REPO_ROOT/dotfiles/.bashrc"
 
-		source ~/.bashrc
+		source ~/.profile
 		nvm install node
 		nvm install-latest-npm
 		success "NVM, node.js and npm were installed" ;;

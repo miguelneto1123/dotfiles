@@ -27,7 +27,6 @@ install () {
 sudo apt-get update
 sudo apt-get upgrade
 install adwaita-icon-theme-full $1
-install brave-browser $1
 install build-essential $1
 install curl $1
 install make $1
