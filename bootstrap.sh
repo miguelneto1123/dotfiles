@@ -11,11 +11,11 @@ source ./logger.sh
 echo "My bash dotfiles!"
 
 info "Attempting to install the dotfiles"
-bash ./install-dotfiles.sh $1
+bash "$REPO_ROOT/install-dotfiles.sh" $1
 success "dotfiles script finished"
 
 info "Attempting to install the programs"
-bash ./install-programs $1
+bash "$REPO_ROOT/install-programs" $1
 success "Program installation script finished"
 
 echo "Everything set!"
