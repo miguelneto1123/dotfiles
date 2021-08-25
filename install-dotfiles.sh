@@ -8,7 +8,7 @@ DOTFILES_ROOT="$REPO_ROOT/dotfiles"
 source ./logger.sh
 
 setup_gitconfig () {
-  if ! [ -f "$DOTFILES_ROOT/.gitconfig" ]
+  if ! [ -f "$HOME/.gitconfig" ]
   then
     info 'setup gitconfig'
 
@@ -21,7 +21,16 @@ setup_gitconfig () {
 
     success 'gitconfig'
   else
-    info 'gitconfig is already set'
+    user 'gitconfig is already set. Do you want to reset it? (y/n)'
+    read -n 1 reply
+    case $reply in
+      [Yy] )
+        rm "$HOME/.gitconfig"
+        setup_gitconfig
+        ;;
+      * )
+        fail "gitconfig setup skipped" ;;
+    esac
   fi
 }
 
