@@ -18,4 +18,5 @@ info "Attempting to install the programs"
 bash "$REPO_ROOT/install-programs.sh" $1
 success "Program installation script finished"
 
-echo "Everything set!"
+info "Everything set to work on next login (so .profile reloads)"
+info "Make sure to load desktop environment configuration from the settings folder"

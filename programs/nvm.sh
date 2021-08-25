@@ -14,7 +14,7 @@ get_latest_release () {
 
 reply="y"
 [ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
-	read -p "$(user "Do you wish to install NVM, node.js and npm? (y/n)")" -n 1 reply
+	read -p "$(user "Do you wish to install NVM? (y/n)")" -n 1 reply
 
 case $reply in
 	[Yy] )
@@ -23,12 +23,8 @@ case $reply in
 		# Run the install script
 		curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$latest/install.sh" | bash
 		# Remove any changes made to ~/.bashrc
-		git checkout -q "$REPO_ROOT/dotfiles/.bashrc"
-
-		source ~/.profile
-		nvm install node
-		nvm install-latest-npm
-		success "NVM, node.js and npm were installed" ;;
+		git checkout -q "$REPO_ROOT/dotfiles/bash/.bashrc"
+		success "NVM was installed. Make sure to run installation for both Node.js and npm after reboot" ;;
 	* )
 		fail "Skipped NVM installation" ;;
 esac

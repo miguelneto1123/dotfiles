@@ -13,7 +13,7 @@ reply="y"
 case $reply in
 	[Yy] )
 		git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
-		success "pyenv was installed" ;;
+		success "pyenv was installed. It will be available next login" ;;
 	* )
 		fail "Skipped pyenv installation" ;;
 esac
