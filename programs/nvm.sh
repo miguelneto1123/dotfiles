@@ -23,7 +23,7 @@ case $reply in
 		# Run the install script
 		curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$latest/install.sh" | bash
 		# Remove any changes made to ~/.bashrc
-		git checkout -q "$REPO_ROOT/dotfiles/bashrc"
+		git checkout -q "$REPO_ROOT/dotfiles/.bashrc"
 
 		source ~/.bashrc
 		nvm install node
