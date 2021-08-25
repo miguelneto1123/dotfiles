@@ -21,8 +21,9 @@ setup_gitconfig () {
 
     success 'gitconfig'
   else
-    user 'gitconfig is already set. Do you want to reset it? (y/n)'
-    read -n 1 reply
+    reply="y"
+    [ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
+      read -p "$(user "gitconfig is already set. Do you want to reset it? (y/n)")" -n 1 reply
     case $reply in
       [Yy] )
         rm "$HOME/.gitconfig"
@@ -118,5 +119,5 @@ install_dotfiles() {
 
 ([ "$1" = "-y" ] || [ "$1" = "-f" ] || [ "$1" = "--force" ]) && overwrite_all="true"
 
-setup_gitconfig
+setup_gitconfig $1
 install_dotfiles
