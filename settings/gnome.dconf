@@ -21,7 +21,7 @@ locate-pointer=false
 
 [shell]
 enable-hot-corners=false
-favorite-apps=['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'code.desktop', 'discord.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'code.desktop', 'discord.desktop']
 
 [shell/extensions/dash-to-dock]
 multi-monitor=true
