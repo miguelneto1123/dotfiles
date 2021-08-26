@@ -24,7 +24,7 @@ case $reply in
 		rm -f packages.microsoft.gpg
 		sudo apt-get install -y apt-transport-https
 		sudo apt-get update
-		sudo apt-get install code
+		sudo apt-get install -y code
 		success "Installed VSCode"
 		info "Installing extensions..."
 		for ext in $(< "$CODE_CONFIG"/extensions); do

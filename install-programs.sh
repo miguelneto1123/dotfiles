@@ -23,9 +23,12 @@ install () {
 	fi
 }
 
+forced=
+([ "$1" = "-y" ] || [ "$1" = "-f" ] || [ "$1" = "--force" ]) && forced="-y"
+
 # Installing apt packages
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade $forced
 install adwaita-icon-theme-full $1
 install build-essential $1
 install curl $1
@@ -38,5 +41,5 @@ for script in programs/*.sh; do bash "$script" $1; done
 
 # Final update, upgrade and remove
 sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get autoremove
+sudo apt-get upgrade $forced
+sudo apt-get autoremove $forced
