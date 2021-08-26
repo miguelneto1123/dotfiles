@@ -1,8 +1,9 @@
-# BASH dotfiles
+# BASH dotfiles for apt-based machines
 
 Heavily inspired by [this post](https://victoria.dev/blog/how-to-set-up-a-fresh-ubuntu-desktop-using-only-dotfiles-and-bash-scripts/)
-I've decided to set up a repository to initialize any machine with some of the
-essentials one would need to have a proper workstation.
+I've decided to set up a repository to initialize any `apt`/`dpkg` based machine
+(don't quote me on that, it's still being tested) with some of the essentials
+one would need to have a proper workstation.
 
 ## Installation
 
