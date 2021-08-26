@@ -10,10 +10,10 @@ REPO_ROOT="$(pwd -P)"
 source ./logger.sh
 
 install () {
-	which $1 &> /dev/null
-
 	flag=
 	([ "$2" = "-y" ] || [ "$2" = "-f" ] || [ "$2" = "--force" ]) && flag="-y"
+
+	which $1 &> /dev/null
 
 	if [ $? -ne 0 ]; then
 		info "Installing: ${1}..."
