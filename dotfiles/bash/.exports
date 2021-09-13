@@ -19,3 +19,6 @@ export HISTCONTROL=ignoreboth
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+
+# Flutter exports
+export CHROME_EXECUTABLE="/usr/bin/brave-browser"

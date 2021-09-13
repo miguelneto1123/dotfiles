@@ -12,3 +12,6 @@ fi
 
 # Go binaries
 PATH="/usr/local/go/bin:$HOME/go/bin:$PATH"
+
+# Flutter binaries
+PATH="$HOME/flutter/bin:$PATH"
