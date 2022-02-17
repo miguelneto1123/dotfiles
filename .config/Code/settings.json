@@ -79,5 +79,6 @@
 	"editor.bracketPairColorization.enabled": true,
 	"terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
 	"julia.symbolCacheDownload": true,
-	"julia.enableTelemetry": true
+	"julia.enableTelemetry": true,
+	"editor.acceptSuggestionOnEnter": "off"
 }

@@ -17,7 +17,7 @@ setup_gitconfig () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" "$REPO_ROOT/templates/gitconfig.template" > .gitconfig
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" "$REPO_ROOT/templates/gitconfig.template" > "$HOME/.gitconfig"
 
     success 'gitconfig'
   else
