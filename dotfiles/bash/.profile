@@ -21,3 +21,8 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
+# =====
+# REMEMBER: If you installed anything else that must be included in PATH or
+# needs to export any env variable, be sure to add them to the files .path and
+# .exports cited above instead of here
+# =====

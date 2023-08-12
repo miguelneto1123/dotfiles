@@ -49,3 +49,8 @@ fi
 
 # adding our own bash completions
 [ -r ~/.bash_completion ] && [ -f ~/.bash_completion ] && . ~/.bash_completion
+
+# =====
+# REMEMBER: If you installed anything else that supports bash completions, be
+# sure to add them to the file .bash_completion cited above instead of here
+# =====
