@@ -7,34 +7,6 @@ DOTFILES_ROOT="$REPO_ROOT/dotfiles"
 # Get logging functions
 source ./logger.sh
 
-setup_gitconfig () {
-  if ! [ -f "$HOME/.gitconfig" ]
-  then
-    info 'setup gitconfig'
-
-    user ' - What is your github author name?'
-    read -e git_authorname
-    user ' - What is your github author email?'
-    read -e git_authoremail
-
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" "$REPO_ROOT/templates/gitconfig.template" > "$HOME/.gitconfig"
-
-    success 'gitconfig'
-  else
-    reply="y"
-    [ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
-      read -p "$(user "gitconfig is already set. Do you want to reset it? (y/n)")" -n 1 reply
-    case $reply in
-      [Yy] )
-        rm "$HOME/.gitconfig"
-        setup_gitconfig
-        ;;
-      * )
-        fail "gitconfig setup skipped" ;;
-    esac
-  fi
-}
-
 link_file () {
   local src=$1 dst=$2
 
@@ -56,14 +28,8 @@ link_file () {
 
       else
 
-        if [ "$currentSrc" == "" ]
-        then
-          user "File $dst does not exist, what do you want to do?\n\
-          [c]opy it from repo, [s]kip, [S]kip all?"
-        else
-          user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
-          [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        fi
+        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+        [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
         case "$action" in
@@ -107,6 +73,19 @@ link_file () {
     then
       success "skipped $src"
     fi
+
+  else
+    user "File $dst does not exist, what do you want to do?\n\
+    [c]opy it from repo, [s]kip?"
+    read -n 1 action
+    
+    case "$action" in
+      s )
+        skip=true;;
+      * )
+        ;;
+    esac
+
   fi
 
   if [ "$skip" != "true" ]  # "false" or empty
@@ -133,5 +112,4 @@ install_dotfiles() {
 
 ([ "$1" = "-y" ] || [ "$1" = "-f" ] || [ "$1" = "--force" ]) && overwrite_all="true"
 
-setup_gitconfig $1
 install_dotfiles
