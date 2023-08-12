@@ -56,8 +56,14 @@ link_file () {
 
       else
 
-        user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
-        [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+        if [ "$currentSrc" == "" ]
+        then
+          user "File $dst does not exist, what do you want to do?\n\
+          [c]opy it from repo, [s]kip, [S]kip all?"
+        else
+          user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+          [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+        fi
         read -n 1 action
 
         case "$action" in
