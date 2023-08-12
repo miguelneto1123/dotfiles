@@ -109,6 +109,7 @@ link_file () {
     then
       cp $REPO_ROOT/templates/bash_completion.template $HOME/.bash_completion
     elif [ "$(basename $src)" == ".bashrc" ]
+    then
       cp $REPO_ROOT/templates/path.template $HOME/.path
       cp $REPO_ROOT/templates/exports.template $HOME/.exports
     fi
