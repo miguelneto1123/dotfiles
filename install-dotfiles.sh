@@ -34,17 +34,17 @@ link_file () {
 
         case "$action" in
           o )
-            overwrite=true;;
+            overwrite=true ;;
           O )
-            overwrite_all=true;;
+            overwrite_all=true ;;
           b )
-            backup=true;;
+            backup=true ;;
           B )
-            backup_all=true;;
+            backup_all=true ;;
           s )
-            skip=true;;
+            skip=true ;;
           S )
-            skip_all=true;;
+            skip_all=true ;;
           * )
             ;;
         esac
@@ -81,7 +81,7 @@ link_file () {
     
     case "$action" in
       s )
-        skip=true;;
+        skip=true ;;
       * )
         ;;
     esac

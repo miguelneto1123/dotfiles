@@ -33,9 +33,9 @@ case $reply in
 			case $ans in
 				[yY] )
 					cat ./templates/nvm-bash.template >> ~/.bash_completion
-					cat ./templates/nvm-exports.template >> ~/.exports					
+					cat ./templates/nvm-exports.template >> ~/.exports ;;
 				* )
-					info "Make sure to add them manually if needed";;
+					info "Make sure to add them manually if needed" ;;
 			esac
 		fi ;;
 	* )
