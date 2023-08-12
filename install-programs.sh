@@ -29,7 +29,6 @@ forced=
 # Installing apt packages
 sudo apt-get update
 sudo apt-get upgrade $forced
-install adwaita-icon-theme-full $1
 install build-essential $1
 install curl $1
 install make $1
