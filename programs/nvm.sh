@@ -24,7 +24,20 @@ case $reply in
 		curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$latest/install.sh" | bash
 		# Remove any changes made to ~/.bashrc
 		git checkout -q "$REPO_ROOT/dotfiles/bash/.bashrc"
-		success "NVM was installed. Make sure to run installation for both Node.js and npm after reboot" ;;
+		success "NVM was installed. Make sure to run installation for both Node.js and npm after reboot"
+		if [ -e "~/.bash_completion" -a -e "~/.exports" ]
+		then
+			ans="y"
+			user "Do you want to add nvm and npm bash completion and NVM to PATH? (Y/n)"
+			read -n 1 ans
+			case $ans in
+				[yY] )
+					cat ./templates/nvm-bash.template >> ~/.bash_completion
+					cat ./templates/nvm-exports.template >> ~/.exports					
+				* )
+					info "Make sure to add them manually if needed";;
+			esac
+		fi ;;
 	* )
 		fail "Skipped NVM installation" ;;
 esac

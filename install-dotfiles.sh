@@ -76,7 +76,7 @@ link_file () {
 
   else
     user "File $dst does not exist, what do you want to do?\n\
-    [c]opy it from repo, [s]kip?"
+      [c]opy it from repo, [s]kip?"
     read -n 1 action
     
     case "$action" in
