@@ -2,3 +2,4 @@
 dotfiles/bash/.path
 dotfiles/bash/.exports
 dotfiles/bash/.bash_completion
+dotfiles/.npmrc
