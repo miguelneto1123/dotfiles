@@ -7,7 +7,8 @@
 	"editor.tabSize": 2,
 	"terminal.integrated.fontSize": 15,
 	"[python]": {
-		"editor.tabSize": 4
+		"editor.tabSize": 4,
+		"editor.formatOnType": true
 	},
 	"python.languageServer": "Pylance",
 	//"emmet.includeLanguages": {
@@ -22,7 +23,11 @@
 	},
 	"[markdown]": {
 		"editor.wordWrap": "on",
-		"editor.quickSuggestions": false,
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
 		"editor.insertSpaces": true
 	},
 	"workbench.startupEditor": "none",
@@ -76,9 +81,13 @@
 	"[html]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
 	"editor.bracketPairColorization.enabled": true,
 	"terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
 	"julia.symbolCacheDownload": true,
 	"julia.enableTelemetry": true,
-	"editor.acceptSuggestionOnEnter": "off"
+	"editor.acceptSuggestionOnEnter": "off",
+	"svelte.enable-ts-plugin": true
 }

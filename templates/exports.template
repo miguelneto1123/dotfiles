@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Increase Bash history size to 32³ entries
+export HISTSIZE=32678
+export HISTFILESIZE=$HISTSIZE
+# Omit duplicates or lines starting with space in the history.
+export HISTCONTROL=ignoreboth
+

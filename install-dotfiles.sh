@@ -105,6 +105,13 @@ link_file () {
 
   if [ "$skip" != "true" ]  # "false" or empty
   then
+    if [ "$(basename $src)" == ".bashrc" ]
+    then
+      cp $REPO_ROOT/templates/bash_completion.template $HOME/.bash_completion
+    elif [ "$(basename $src)" == ".bashrc" ]
+      cp $REPO_ROOT/templates/path.template $HOME/.path
+      cp $REPO_ROOT/templates/exports.template $HOME/.exports
+    fi
     ln -s "$1" "$2"
     success "linked $1 to $2"
   fi
