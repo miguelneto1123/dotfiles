@@ -8,7 +8,7 @@ source ./logger.sh
 
 reply="y"
 [ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
-	read -p '$(user "Do you wish to install pyenv for Python version management? (y/n)")' -n 1 reply
+	read -p "$(user 'Do you wish to install pyenv for Python version management? (y/n)')" -n 1 reply
 
 case $reply in
 	[Yy] )
@@ -18,7 +18,7 @@ case $reply in
 		then
 			ans="y"
 			[ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
-				read -p '$(user "Do you want to add pyenv and pip bash completion and pyenv to PATH? (Y/n)")' -n 1 ans
+				read -p "$(user 'Do you want to add pyenv and pip bash completion and pyenv to PATH? (Y/n)')" -n 1 ans
 			case $ans in
 				[yY] )
 					cat ./templates/pyenv-bash.template >> ~/.bash_completion
