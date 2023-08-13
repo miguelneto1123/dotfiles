@@ -75,16 +75,32 @@ link_file () {
     fi
 
   else
-    user "File $dst does not exist, what do you want to do?\n\
-      [c]opy it from repo, [s]kip?"
-    read -n 1 action
-    
-    case "$action" in
-      s )
-        skip=true ;;
-      * )
-        ;;
-    esac
+
+    if [ "$copy_all" != "true" ]
+    then
+
+      user "File $dst does not exist, what do you want to do?\n\
+        [c]opy from repo, [C]opy all from repo, [s]kip, [S]kip all?"
+      read -n 1 action
+      
+      case "$action" in
+        C )
+          copy_all=true ;;
+        s )
+          skip=true ;;
+        S )
+          skip_all=true ;;
+        * )
+          ;;
+      esac
+
+      skip=${skip:-$skip_all}
+      if [ "$skip" == "true" ]
+      then
+        success "skipped $src"
+      fi
+
+    fi
 
   fi
 
@@ -110,6 +126,7 @@ install_dotfiles() {
 	done
 }
 
-([ "$1" = "-y" ] || [ "$1" = "-f" ] || [ "$1" = "--force" ]) && overwrite_all="true"
+([ "$1" = "-y" ] || [ "$1" = "-f" ] || [ "$1" = "--force" ]) && \ 
+overwrite_all="true" && copy_all="true"
 
 install_dotfiles

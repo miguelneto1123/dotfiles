@@ -33,7 +33,8 @@ case $reply in
 			case $ans in
 				[yY] )
 					cat ./templates/nvm-bash.template >> ~/.bash_completion
-					cat ./templates/nvm-exports.template >> ~/.exports ;;
+					cat ./templates/nvm-exports.template >> ~/.exports
+					success "Added to PATH and to bash completions" ;;
 				* )
 					info "Make sure to add them manually if needed" ;;
 			esac

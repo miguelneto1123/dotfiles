@@ -24,7 +24,7 @@ reply=
 case $reply in
 	[Yy] )
 		info "Installing Vim..."
-		sudo apt-get install -y libncurses5-dev libx11-dev libxtst-dev libxt-dev libsm-dev libxpm-dev
+		sudo apt-get install -y build-essential libncurses5-dev libx11-dev libxtst-dev libxt-dev libsm-dev libxpm-dev
 		cd $HOME
 		git clone https://github.com/vim/vim.git
 		cd vim/src

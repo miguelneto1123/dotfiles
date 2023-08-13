@@ -29,8 +29,6 @@ forced=
 # Installing apt packages
 sudo apt-get update
 sudo apt-get upgrade $forced
-install build-essential $1
-install make $1	# probably comes with build-essential
 install tree $1
 install wget $1 # probably came with the system
 

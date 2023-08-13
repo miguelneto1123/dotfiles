@@ -22,7 +22,8 @@ case $reply in
 			case $ans in
 				[yY] )
 					cat ./templates/pyenv-bash.template >> ~/.bash_completion
-					cat ./templates/pyenv-exports.template >> ~/.exports ;;	
+					cat ./templates/pyenv-exports.template >> ~/.exports
+					success "Added to PATH and to bash completions" ;;	
 				* )
 					info "Make sure to add them manually if needed" ;;
 			esac
