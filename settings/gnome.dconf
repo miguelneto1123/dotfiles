@@ -21,7 +21,7 @@ locate-pointer=false
 
 [shell]
 enable-hot-corners=false
-favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'code.desktop', 'discord.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop']
 
 [shell/extensions/dash-to-dock]
 multi-monitor=true
@@ -48,8 +48,6 @@ trash-icon-visible=false
 clock-show-date=true
 gtk-im-module='gtk-im-context-simple'
 show-battery-percentage=true
-cursor-theme='DMZ-Black'
-gtk-theme='Adwaita-dark'
 
 [desktop/peripherals/touchpad]
 speed=0.16541353383458657
