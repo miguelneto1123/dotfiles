@@ -7,7 +7,7 @@ REPO_ROOT="$(pwd -P)"
 source ./logger.sh
 
 get_latest_release () {
-  curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+  wget -q -O - "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
     grep '"tag_name":' |                                            # Get tag line
     sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
 }
@@ -21,11 +21,11 @@ case $reply in
 		# Get github latest version
 		latest="$(get_latest_release "nvm-sh/nvm")"
 		# Run the install script
-		curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$latest/install.sh" | bash
+		wget -q -O - "https://raw.githubusercontent.com/nvm-sh/nvm/$latest/install.sh" | bash
 		# Remove any changes made to ~/.bashrc
 		git checkout -q "$REPO_ROOT/dotfiles/bash/.bashrc"
 		success "NVM was installed. Make sure to run installation for both Node.js and npm after reboot"
-		if [ -e "~/.bash_completion" -a -e "~/.exports" ]
+		if [ -e ~/.bash_completion -a -e ~/.exports ]
 		then
 			ans="y"
 			user "Do you want to add nvm and npm bash completion and NVM to PATH? (Y/n)"

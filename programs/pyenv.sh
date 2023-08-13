@@ -14,7 +14,7 @@ case $reply in
 	[Yy] )
 		git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
 		success "pyenv was installed. It will be available next login"
-		if [ -e "~/.bash_completion" -a -e "~/.exports" ]
+		if [ -e ~/.bash_completion -a -e ~/.exports ]
 		then
 			ans="y"
 			user "Do you want to add pyenv and pip bash completion and pyenv to PATH? (Y/n)"
