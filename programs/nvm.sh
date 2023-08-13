@@ -14,7 +14,7 @@ get_latest_release () {
 
 reply="y"
 [ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
-	read -p "$(user "Do you wish to install NVM? (y/n)")" -n 1 reply
+	read -p '$(user "Do you wish to install NVM for node.js version management? (y/n)")' -n 1 reply
 
 case $reply in
 	[Yy] )
@@ -28,8 +28,8 @@ case $reply in
 		if [ -e ~/.bash_completion -a -e ~/.exports ]
 		then
 			ans="y"
-			user "Do you want to add nvm and npm bash completion and NVM to PATH? (Y/n)"
-			read -n 1 ans
+			[ "$1" = "-f" ] || [ "$1" = "-y" ] || [ "$1" = "--force" ] || \
+				read -p '$(user "Do you want to add nvm and npm bash completion and NVM to PATH? (Y/n)")' -n 1 ans
 			case $ans in
 				[yY] )
 					cat ./templates/nvm-bash.template >> ~/.bash_completion

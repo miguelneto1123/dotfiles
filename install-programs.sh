@@ -10,7 +10,7 @@ REPO_ROOT="$(pwd -P)"
 source ./logger.sh
 
 install () {
-	flag=
+	local flag=
 	([ "$2" = "-y" ] || [ "$2" = "-f" ] || [ "$2" = "--force" ]) && flag="-y"
 
 	which $1 &> /dev/null
@@ -29,11 +29,11 @@ forced=
 # Installing apt packages
 sudo apt-get update
 sudo apt-get upgrade $forced
-install tree $1
-install wget $1 # probably came with the system
+install tree $forced
+install wget $forced # probably came with the system
 
 # Installing the programs
-for script in programs/*.sh; do bash "$script" $1; done
+for script in programs/*.sh; do bash "$script" $forced; done
 
 # Final update, upgrade and remove
 sudo apt-get update
